@@ -142,7 +142,7 @@ export default function Services() {
                 </div>
 
                 {/* SERVICE CONTENT */}
-                <div className="flex flex-1 items-center justify-between gap-6">
+                <div className="flex flex-1 flex-col gap-4">
                   <div className="min-w-0">
                     {/* CATEGORY */}
                     <span className="text-[0.5rem] uppercase tracking-[0.3em] text-salmon-600">
@@ -193,8 +193,8 @@ export default function Services() {
                   </div>
 
                   {/* PRICE */}
-                  <div className="hidden shrink-0 text-right sm:block">
-                    <span className="block text-sm font-medium text-ink-900">
+                  <div className="shrink-0">
+                    <span className="text-sm font-medium text-ink-900">
                       {service.price}
                     </span>
                   </div>
@@ -230,116 +230,46 @@ export default function Services() {
                       delay: index * 0.25,
                     },
                   }}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink-700/10 bg-cream-50"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center self-end rounded-full border border-ink-700/[0.10] transition-all duration-500 group-hover:border-salmon-500 group-hover:bg-salmon-500 lg:self-auto"
                 >
-                  <ArrowUpRight className="h-4 w-4 text-salmon-600" />
+                  <ArrowUpRight className="h-4 w-4 text-ink-700/50 transition-colors duration-300 group-hover:text-ink-900" />
                 </motion.div>
               </div>
             </motion.div>
           ))}
-
-          <div className="border-t border-ink-700/[0.10]" />
         </div>
 
-        {/* MAINTENANCE TABLE */}
+        {/* FOOTER / SCHEDULE */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={
-            isInView
-              ? {
-                  opacity: 1,
-                  y: 0,
-                }
-              : {}
-          }
+          initial={{
+            opacity: 0,
+            y: 15,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
           transition={{
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.7,
+            delay: 0.2,
             ease: easeLux,
           }}
-          className="mt-16 lg:mt-20"
+          className="mt-10 flex flex-col gap-4 border-t border-ink-700/[0.10] pt-6 sm:flex-row sm:items-center sm:justify-between"
         >
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-10 bg-salmon-500" />
-
-              <span className="text-[0.55rem] uppercase tracking-[0.4em] text-salmon-600">
-                TABELA DE MANUTENÇÃO
-              </span>
-            </div>
-
-            <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-ink-700/[0.10] bg-cream-50">
-              <div className="divide-y divide-ink-700/[0.08]">
-                {siteConfig.maintenance.prices.map((item) => (
-                  <div
-                    key={item.period}
-                    className="flex items-center justify-between gap-6 px-6 py-5 sm:px-8"
-                  >
-                    <span className="font-serif text-lg italic text-ink-900 sm:text-xl">
-                      {item.period}
-                    </span>
-
-                    <span className="text-sm font-medium text-salmon-600">
-                      {item.price}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* MAINTENANCE RULES */}
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
-                <span className="font-medium text-ink-900">
-                  Obrigatório:
-                </span>{' '}
-                mínimo de 50% das extensões.
-              </div>
-
-              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
-                Passando desse prazo, é cobrado o valor da aplicação.
-              </div>
-
-              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
-                <span className="font-medium text-ink-900">
-                  Remoção química:
-                </span>{' '}
-                R$ 50,00.
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* FOOTER */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={
-            isInView
-              ? {
-                  opacity: 1,
-                }
-              : {}
-          }
-          transition={{
-            delay: 0.8,
-            duration: 0.8,
-          }}
-          className="mt-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-center"
-        >
-          <div className="flex items-center gap-3 text-[0.55rem] uppercase tracking-[0.25em] text-ink-700/40">
+          <div className="flex items-center gap-2 text-[0.52rem] uppercase tracking-[0.3em] text-ink-700/35">
             <Clock className="h-3.5 w-3.5 text-salmon-500" />
-
-            Atendimento com hora marcada
+            {siteConfig.schedule.weekdays}
           </div>
 
-          <a
-            href="#contato"
-            className="group flex items-center gap-3 text-[0.55rem] font-semibold uppercase tracking-[0.25em] text-salmon-600"
-          >
-            Agendar atendimento
+          <div className="flex items-center gap-2 text-[0.52rem] uppercase tracking-[0.3em] text-ink-700/35">
+            <Clock className="h-3.5 w-3.5 text-salmon-500" />
+            {siteConfig.schedule.saturday}
+          </div>
 
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          <div className="text-[0.52rem] uppercase tracking-[0.3em] text-ink-700/35">
+            {siteConfig.contact.city}
+          </div>
         </motion.div>
       </div>
     </section>
