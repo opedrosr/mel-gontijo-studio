@@ -103,25 +103,27 @@ export default function Header() {
               duration: 0.3,
               ease: easeLux,
             }}
-            className="group flex items-center gap-3"
+            className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
           >
-            <span className="font-serif text-3xl italic leading-none text-cream-50 transition-colors duration-300 group-hover:text-salmon-500">
+            {/* Initial */}
+            <span className="shrink-0 font-serif text-3xl italic leading-none text-cream-50 transition-colors duration-300 group-hover:text-salmon-500 sm:text-3xl">
               {siteConfig.professional.logoInitial}
             </span>
 
-            <span className="hidden border-l border-cream-50/10 pl-3 sm:block">
-              <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-cream-50">
+            {/* Brand */}
+            <span className="min-w-0 border-l border-cream-50/10 pl-2.5 sm:pl-3">
+              <span className="block truncate text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-cream-50 sm:text-[0.65rem] sm:tracking-[0.25em]">
                 {siteConfig.professional.name}
               </span>
 
-              <span className="mt-1 block text-[0.45rem] uppercase tracking-[0.3em] text-cream-50/35">
+              <span className="mt-1 block truncate text-[0.4rem] uppercase tracking-[0.2em] text-cream-50/35 sm:text-[0.45rem] sm:tracking-[0.3em]">
                 {siteConfig.professional.profession}
               </span>
             </span>
           </motion.a>
 
           {/* Desktop navigation */}
-          <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
             {NAV.map((item, index) => (
               <a
                 key={item.href}
@@ -172,7 +174,7 @@ export default function Header() {
             type="button"
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-            className="flex h-10 w-10 items-center justify-center border border-cream-50/10 text-cream-50 lg:hidden"
+            className="flex h-10 w-10 shrink-0 items-center justify-center border border-cream-50/10 text-cream-50 lg:hidden"
           >
             {open ? (
               <X className="h-5 w-5" />
@@ -242,4 +244,4 @@ export default function Header() {
       </AnimatePresence>
     </motion.header>
   );
-} 
+}
