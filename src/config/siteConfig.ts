@@ -77,16 +77,6 @@ export const siteConfig = {
         image: '/images/volumeBrasileiro.jpeg',
       },
 
-      {
-        id: 'volume-brown',
-        number: '02',
-        category: 'EXTENSÃO DE CÍLIOS',
-        title: 'Volume Brown',
-        description:
-          'O equilíbrio perfeito entre naturalidade e elegância. Um olhar marcante, com fios marrons que entregam leveza e um acabamento super sofisticado.',
-        price: 'R$ 160,00',
-        image: '/images/volumeBrown.jpeg',
-      },
 
       {
         id: 'volume-luxo',
