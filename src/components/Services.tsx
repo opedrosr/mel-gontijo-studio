@@ -28,7 +28,6 @@ export default function Services() {
       </div>
 
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
-
         {/* HEADER */}
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <motion.div
@@ -110,7 +109,6 @@ export default function Services() {
               className="group border-t border-ink-700/[0.10]"
             >
               <div className="relative flex flex-col gap-6 py-7 sm:py-9 lg:flex-row lg:items-center lg:gap-10">
-
                 {/* NUMBER */}
                 <div className="flex shrink-0 items-center gap-5 lg:w-28">
                   <motion.span
@@ -146,7 +144,6 @@ export default function Services() {
                 {/* SERVICE CONTENT */}
                 <div className="flex flex-1 items-center justify-between gap-6">
                   <div className="min-w-0">
-
                     {/* CATEGORY */}
                     <span className="text-[0.5rem] uppercase tracking-[0.3em] text-salmon-600">
                       {service.category}
@@ -243,6 +240,75 @@ export default function Services() {
 
           <div className="border-t border-ink-700/[0.10]" />
         </div>
+
+        {/* MAINTENANCE TABLE */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={
+            isInView
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {}
+          }
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: easeLux,
+          }}
+          className="mt-16 lg:mt-20"
+        >
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-4">
+              <span className="h-px w-10 bg-salmon-500" />
+
+              <span className="text-[0.55rem] uppercase tracking-[0.4em] text-salmon-600">
+                TABELA DE MANUTENÇÃO
+              </span>
+            </div>
+
+            <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-ink-700/[0.10] bg-cream-50">
+              <div className="divide-y divide-ink-700/[0.08]">
+                {siteConfig.maintenance.prices.map((item) => (
+                  <div
+                    key={item.period}
+                    className="flex items-center justify-between gap-6 px-6 py-5 sm:px-8"
+                  >
+                    <span className="font-serif text-lg italic text-ink-900 sm:text-xl">
+                      {item.period}
+                    </span>
+
+                    <span className="text-sm font-medium text-salmon-600">
+                      {item.price}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* MAINTENANCE RULES */}
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
+                <span className="font-medium text-ink-900">
+                  Obrigatório:
+                </span>{' '}
+                mínimo de 50% das extensões.
+              </div>
+
+              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
+                Passando desse prazo, é cobrado o valor da aplicação.
+              </div>
+
+              <div className="border-l border-salmon-500 pl-4 text-sm leading-6 text-ink-700/60">
+                <span className="font-medium text-ink-900">
+                  Remoção química:
+                </span>{' '}
+                R$ 50,00.
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* FOOTER */}
         <motion.div

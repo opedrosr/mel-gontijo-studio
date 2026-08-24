@@ -128,9 +128,10 @@ export default function Portfolio() {
         <motion.div className="grid auto-rows-[260px] grid-cols-2 gap-3 sm:auto-rows-[300px] sm:gap-4 lg:auto-rows-[280px] lg:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {filteredImages.map((image, index) => {
-              const featured =
-                index === 0 ||
-                index === filteredImages.length - 1;
+              // Apenas a primeira imagem é destacada.
+              // As demais ficam no mesmo tamanho,
+              // incluindo Design Natural e Brow Lamination.
+              const featured = index === 0;
 
               return (
                 <motion.article

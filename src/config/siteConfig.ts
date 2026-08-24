@@ -177,7 +177,6 @@ export const siteConfig = {
     ],
 
     rules: [
-      'A manutenção é válida para qualquer extensão.',
       'É obrigatório ter, no mínimo, 50% das extensões para caracterizar manutenção.',
       'Passando do prazo, será cobrado o valor de uma nova aplicação.',
       'O Volume Sirena não possui manutenção.',
