@@ -22,7 +22,7 @@ export const siteConfig = {
   },
 
   hero: {
-    eyebrow: 'MEL GONTIJO STUDIO · LASH DESIGN',
+    eyebrow: 'MEL GONTIJO STUDIO · LASH DESIGNER',
     title: 'Um olhar que eleva',
     highlight: 'sua autoestima.',
     description:
@@ -40,7 +40,7 @@ export const siteConfig = {
     image: '/images/profissional.jpeg',
 
     paragraphs: [
-      'Sou Mel Gontijo, Lash Design de 25 anos. Meu objetivo é elevar a sua autoestima através de um olhar que valorize a sua beleza e combine com você.',
+      'Sou Mel Gontijo, Lash Designer de 25 anos. Meu objetivo é elevar a sua autoestima através de um olhar que valorize a sua beleza e combine com você.',
       'Tenho como missão me dedicar ao máximo em cada atendimento para trazer o melhor resultado possível, com atenção, cuidado e técnicas pensadas para cada cliente.',
     ],
 
