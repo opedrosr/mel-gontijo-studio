@@ -1,7 +1,7 @@
 export const siteConfig = {
   professional: {
     name: 'MEL GONTIJO STUDIO',
-    profession: 'LASH DESIGN',
+    profession: 'LASH DESIGNER',
     instagram: '@melgontijo_studio',
     instagramUrl: 'https://instagram.com/melgontijo_studio',
     logoInitial: 'M',
