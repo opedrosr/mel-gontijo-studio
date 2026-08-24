@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
-  MessageCircle,
   Sparkles,
 } from 'lucide-react';
 import {
@@ -27,11 +26,6 @@ type QuizChoice = {
 
 const lashChoices: QuizChoice[] = [
   {
-    id: 'brown',
-    title: 'Natural e sofisticado',
-    description: 'Quero um olhar marcante, mas com leveza e elegância.',
-  },
-  {
     id: 'brasileiro',
     title: 'Cheio e equilibrado',
     description: 'Quero cílios mais cheios, leves e bem alinhados.',
@@ -49,7 +43,8 @@ const lashChoices: QuizChoice[] = [
   {
     id: 'sirena',
     title: 'Delineado e elegante',
-    description: 'Quero um efeito alongado, mais natural e com aparência de delineado.',
+    description:
+      'Quero um efeito alongado, mais natural e com aparência de delineado.',
   },
 ];
 
@@ -79,7 +74,6 @@ export default function Experience() {
 
     const serviceMap: Record<string, string> = {
       brasileiro: 'volume-brasileiro',
-      brown: 'volume-brown',
       luxo: 'volume-luxo',
       fox: 'volume-fox-eyes',
       sirena: 'volume-sirena',
@@ -94,7 +88,8 @@ export default function Experience() {
     );
   }, [choice]);
 
-  const currentChoices = area === 'lashes' ? lashChoices : browChoices;
+  const currentChoices =
+    area === 'lashes' ? lashChoices : browChoices;
 
   const resetQuiz = () => {
     setArea(null);
@@ -119,7 +114,6 @@ export default function Experience() {
       </div>
 
       <div className="relative mx-auto max-w-[1400px]">
-
         {/* HEADER */}
         <motion.div
           variants={staggerContainer}
@@ -176,12 +170,10 @@ export default function Experience() {
           className="mt-16"
         >
           <div className="relative overflow-hidden rounded-[2rem] bg-ink-900 p-6 sm:p-10 lg:p-14">
-
             {/* Glow */}
             <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-salmon-500/[0.07] blur-[100px]" />
 
             <div className="relative">
-
               {/* QUIZ HEADER */}
               <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
                 <div>
@@ -328,9 +320,7 @@ export default function Experience() {
                     className="mt-10"
                   >
                     <div className="overflow-hidden rounded-[1.5rem] border border-cream-50/10 bg-cream-50/[0.035]">
-
                       <div className="grid lg:grid-cols-[0.75fr_1.25fr]">
-
                         {/* IMAGE */}
                         <div className="relative min-h-[280px] overflow-hidden bg-ink-800 lg:min-h-[420px]">
                           <img

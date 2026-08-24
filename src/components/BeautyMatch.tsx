@@ -109,9 +109,9 @@ const recommendations: Record<
   },
 
   expressao: {
-    title: 'Volume Brown',
+    title: 'Volume Sirena',
     description:
-      'Fios marrons que entregam leveza, naturalidade e sofisticação para um olhar marcante sem pesar na expressão.',
+      'Uma excelente escolha para valorizar a expressão com leveza, delicadeza e um efeito alongado que harmoniza naturalmente com o olhar.',
   },
 
   leve: {
@@ -127,9 +127,9 @@ const recommendations: Record<
   },
 
   elegante: {
-    title: 'Volume Brown',
+    title: 'Volume Brasileiro',
     description:
-      'O equilíbrio perfeito entre naturalidade e elegância, com fios marrons que proporcionam um acabamento sofisticado.',
+      'Uma escolha elegante e versátil, que combina volume, leveza e definição para criar um olhar sofisticado e harmonioso.',
   },
 };
 
@@ -195,7 +195,6 @@ export default function BeautyMatch() {
       </div>
 
       <div className="relative mx-auto max-w-[1200px]">
-
         {/* =================================================
             HEADER
         ================================================== */}
@@ -260,7 +259,6 @@ export default function BeautyMatch() {
           className="mx-auto mt-16 max-w-3xl"
         >
           <div className="relative overflow-hidden rounded-[2rem] border border-cream-50/[0.08] bg-cream-50/[0.025] p-6 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.7)] backdrop-blur-xl sm:p-10 lg:p-12">
-
             {/* =================================================
                 PROGRESS
             ================================================== */}
@@ -296,10 +294,6 @@ export default function BeautyMatch() {
             </div>
 
             <AnimatePresence mode="wait">
-
-              {/* =================================================
-                  QUESTIONS
-              ================================================== */}
               {!result ? (
                 <motion.div
                   key={`question-${step}`}
@@ -386,10 +380,6 @@ export default function BeautyMatch() {
                   )}
                 </motion.div>
               ) : (
-
-                /* =================================================
-                    RESULT
-                ================================================== */
                 <motion.div
                   key="result"
                   initial={{
@@ -433,7 +423,6 @@ export default function BeautyMatch() {
                       className="inline-flex items-center justify-center gap-3 rounded-full bg-salmon-500 px-7 py-4 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-ink-900 transition-transform duration-300 hover:scale-[1.02]"
                     >
                       Quero esse atendimento
-
                       <ArrowRight className="h-4 w-4" />
                     </a>
 
